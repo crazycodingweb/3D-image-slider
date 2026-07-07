@@ -40,9 +40,9 @@ body {
 
 @keyframes orbit {
     from {
-        transform: rotateY(0deg) translateZ(400px);
+        transform: rotateY(0deg) rotateX(-15deg) translateZ(400px);
     } to {
-        transform: rotateY(360deg) translateZ(400px);
+        transform: rotateY(360deg) rotateX(-15deg) translateZ(400px);
     }
 }
 @keyframes scene {
