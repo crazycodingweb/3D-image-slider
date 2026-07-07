@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+.container {
+    margin: 0;
+    background-image: url(/background.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.scene {
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateX(-15deg);
+    animation: scene 5s linear infinite alternate;
+}
+.hurman {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(70vw, 520px);
+}
+.orbit {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 30%;
+    transform: rotateY(360deg);
+    animation: orbit var(--time) linear infinite;
+    animation-delay: calc(var(--delay) * -1);
+}
+
+@keyframes orbit {
+    from {
+        transform: rotateY(0deg) translateZ(400px);
+    } to {
+        transform: rotateY(360deg) translateZ(400px);
+    }
+}
+@keyframes scene {
+    from {
+        transform: rotateX(-15deg);
+    } to {
+        transform: rotateX(15deg);
+    }
+}
